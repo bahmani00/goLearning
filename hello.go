@@ -8,22 +8,24 @@ const helloPrefix_French = "Bonjoure, "
 const lang_Spanish = "sp"
 const lang_French = "fr"
 
-
 func Hello(name string, lang string) string {
 	if name == "" {
 		name = "World"
 	}
+	
+  return greetingPrefix(lang) + name
+}
 
-	prefix := helloPrefix;
+func greetingPrefix(lang string) string{
 	switch lang {
 	case lang_French:
-		prefix = helloPrefix_French
+		return helloPrefix_French
 	case lang_Spanish:
-		prefix = helloPrefix_Spanish
+		return helloPrefix_Spanish
 	}
-	
-  return prefix + name
+	return helloPrefix;
 }
+
 func main()  {
 	fmt.Println(Hello("World", ""))
 }
