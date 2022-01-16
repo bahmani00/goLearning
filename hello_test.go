@@ -28,5 +28,13 @@ func TestHello(t * testing.T)  {
     if got != want {
       t.Errorf("got %q wanted %q", got, want)
     }
-  })  
+  })
+  t.Run("Saying hello to people in French", func (t * testing.T)  {
+    got := Hello("Chris", "fr")
+    want := "Bonjoure, Chris"
+
+    if got != want {
+      t.Errorf("got %q wanted %q", got, want)
+    }
+  })   
 }
